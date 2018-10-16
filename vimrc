@@ -10,7 +10,7 @@ set colorcolumn=81
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set cino=N-s " for C++ namespace{} declarations
+set cino=N-s,g1 " for C++ namespace{} declarations and public/private indent
 
 " color scheme
 color dracula
