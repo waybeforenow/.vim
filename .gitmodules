@@ -1,0 +1,24 @@
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "bundle/vim-bookmarks"]
+	path = bundle/vim-bookmarks
+	url = https://github.com/MattesGroeger/vim-bookmarks
+[submodule "bundle/vim-perl"]
+	path = bundle/vim-perl
+	url = https://github.com/vim-perl/vim-perl
+[submodule "bundle/vim-perl6"]
+	path = bundle/vim-perl6
+	url = https://github.com/vim-perl/vim-perl6
+[submodule "bundle/vim-sensible"]
+	path = bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "bundle/dracula-theme"]
+	path = bundle/dracula-theme
+	url = https://github.com/dracula/vim
+[submodule "bundle/vim-clang-format"]
+	path = bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format
