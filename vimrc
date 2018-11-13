@@ -13,14 +13,18 @@ set expandtab
 set cino=N-s,g1 " for C++ namespace{} declarations and public/private indent
 
 " color scheme
-color dracula
+if has("gui_running")
+  color dracula
+else
+  set background=dark
+endif
 
 " autoopen for NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " gVim font
-set guifont=Consolas:h11
+"set guifont=Consolas:h11
 
 " disable most mouse things
 set mouse=c
@@ -39,3 +43,7 @@ let g:syntastic_check_on_wq = 0
 let g:clang_format#code_style = "google"
 let g:clang_format#auto_format = 1
 
+" markdown formatting
+autocmd FileType markdown,mkd call pencil#init()
+autocmd FileType markdown,mkd setlocal textwidth=80
+autocmd FileType markdown,mkd setlocal conceallevel=0
