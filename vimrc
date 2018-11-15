@@ -24,7 +24,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " gVim font
-"set guifont=Consolas:h11
+if has("win32")
+  set guifont=Consolas:h11
+endif
 
 " disable most mouse things
 set mouse=c
@@ -47,3 +49,5 @@ let g:clang_format#auto_format = 1
 autocmd FileType markdown,mkd call pencil#init()
 autocmd FileType markdown,mkd setlocal textwidth=80
 autocmd FileType markdown,mkd setlocal conceallevel=0
+autocmd FileType markdown,mkd vertical resize +1
+
