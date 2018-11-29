@@ -40,8 +40,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_clang_check_post_args = ["--", "-x", "c++"]
+let g:syntastic_cpp_checkers = ["clang_check"]
+
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ["perl"]
 
 " clang-format options
+let g:clang_format#command = "clang-format70"
 let g:clang_format#code_style = "google"
 let g:clang_format#auto_format = 1
 
@@ -51,3 +57,5 @@ autocmd FileType markdown,mkd setlocal textwidth=80
 autocmd FileType markdown,mkd setlocal conceallevel=0
 autocmd FileType markdown,mkd vertical resize +1
 
+" perltidy automation
+autocmd BufRead,BufNewFile,BufWritePost *.pl,*.plx,*.pm :%!perltidy -q
