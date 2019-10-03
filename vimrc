@@ -1,4 +1,6 @@
 " baseline
+set langmenu=en_US.UTF-8    " sets the language of the menu (gvim)
+language en                 " sets the language of the messages / ui (vim)
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -12,6 +14,15 @@ set shiftwidth=2
 set expandtab
 set cino=N-s,g1 " for C++ namespace{} declarations and public/private indent
 
+" Cygwin-specific options
+if has("win32")
+  let $CHERE_INVOKING=1
+  set shell=C:\cygwin64\bin\bash.exe
+  set shellcmdflag=--login\ -c
+  set shellxquote=\"
+  set shellslash
+endif
+
 " color scheme
 if has("gui_running")
   color dracula
@@ -23,31 +34,28 @@ endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+let NERDTreeIgnore = ['\.o$', '\.exe$']
+
 " gVim font
 if has("win32")
-  set guifont=Consolas:h11
+  set guifont=Consolas:h10
 endif
 
 " disable most mouse things
 set mouse=c
 
 " Syntastic options
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_clang_check_post_args = ["--", "-x", "c++"]
-let g:syntastic_cpp_checkers = ["clang_check"]
-
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ["perl"]
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " clang-format options
-let g:clang_format#command = "clang-format70"
 let g:clang_format#code_style = "google"
 let g:clang_format#auto_format = 1
 
@@ -57,5 +65,15 @@ autocmd FileType markdown,mkd setlocal textwidth=80
 autocmd FileType markdown,mkd setlocal conceallevel=0
 autocmd FileType markdown,mkd vertical resize +1
 
+" re2c formatting
+autocmd BufNewFile,BufReadPost *.rc setlocal filetype=cpp
+
 " perltidy automation
 autocmd BufRead,BufNewFile,BufWritePost *.pl,*.plx,*.pm :%!perltidy -q
+
+" hexmode config
+let g:hexmode_patterns = '*.DIM,*.dim,*.HDS,*.hds,*.HDF,*.hdf,*.XDF,*.xdf'
+
+" tagbar options
+let g:tagbar_ctags_bin = 'C:\cygwin64\bin\ctags.exe'
+cnoreabbrev tt TagbarToggle
