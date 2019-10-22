@@ -1,6 +1,5 @@
 " baseline
 set langmenu=en_US.UTF-8    " sets the language of the menu (gvim)
-language en                 " sets the language of the messages / ui (vim)
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -41,6 +40,11 @@ if has("win32")
   set guifont=Consolas:h10
 endif
 
+" MacVim font
+if has("gui_macvim")
+  set guifont=Monaco:h12
+endif
+
 " disable most mouse things
 set mouse=c
 
@@ -58,6 +62,9 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 " clang-format options
 let g:clang_format#code_style = "google"
 let g:clang_format#auto_format = 1
+
+" autopep8 options
+let g:autopep8_on_save = 1
 
 " markdown formatting
 autocmd FileType markdown,mkd call pencil#init()
