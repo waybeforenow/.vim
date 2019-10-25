@@ -20,6 +20,7 @@ if has("win32")
   set shellcmdflag=--login\ -c
   set shellxquote=\"
   set shellslash
+  let g:gitgutter_git_executable = "C:/cygwin64/bin/git.exe"
 endif
 
 " color scheme
@@ -33,7 +34,7 @@ endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let NERDTreeIgnore = ['\.o$', '\.exe$']
+let NERDTreeIgnore = ['\.o$', '\.exe$', '\.ilk$', '\.pdb$', '\.dll$']
 
 " gVim font
 if has("win32")
@@ -73,7 +74,7 @@ autocmd FileType markdown,mkd setlocal conceallevel=0
 autocmd FileType markdown,mkd vertical resize +1
 
 " re2c formatting
-autocmd BufNewFile,BufReadPost *.rc setlocal filetype=cpp
+autocmd BufRead,BufNewFile *.re setlocal filetype=cpp
 
 " perltidy automation
 autocmd BufRead,BufNewFile,BufWritePost *.pl,*.plx,*.pm :%!perltidy -q
