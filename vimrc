@@ -85,3 +85,13 @@ let g:hexmode_patterns = '*.DIM,*.dim,*.HDS,*.hds,*.HDF,*.hdf,*.XDF,*.xdf'
 " tagbar options
 let g:tagbar_ctags_bin = 'C:\cygwin64\bin\ctags.exe'
 cnoreabbrev tt TagbarToggle
+
+" preset for writing
+function Imwriting()
+  NERDTreeClose
+  Goyo
+  Limelight
+  PencilSoft
+endfunction
+cnoreabbrev imwriting call Imwriting()
+
