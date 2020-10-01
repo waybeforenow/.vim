@@ -62,10 +62,12 @@ let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_f
 
 " clang-format options
 let g:clang_format#code_style = "google"
-let g:clang_format#auto_format = 1
+let g:clang_format#auto_format = 0
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 " autopep8 options
 let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
 
 " markdown formatting
 autocmd FileType markdown,mkd call pencil#init()
