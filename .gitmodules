@@ -1,18 +1,9 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "bundle/vim-bookmarks"]
 	path = bundle/vim-bookmarks
 	url = https://github.com/MattesGroeger/vim-bookmarks
-[submodule "bundle/vim-perl"]
-	path = bundle/vim-perl
-	url = https://github.com/vim-perl/vim-perl
-[submodule "bundle/vim-perl6"]
-	path = bundle/vim-perl6
-	url = https://github.com/vim-perl/vim-perl6
 [submodule "bundle/vim-sensible"]
 	path = bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible
@@ -25,9 +16,6 @@
 [submodule "bundle/vim-pencil"]
 	path = bundle/vim-pencil
 	url = https://github.com/reedes/vim-pencil
-[submodule "bundle/hexmode"]
-	path = bundle/hexmode
-	url = https://github.com/fidian/hexmode.git
 [submodule "bundle/goyo.vim"]
 	path = bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
@@ -37,30 +25,18 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "bundle/vim-autopep8"]
-	path = bundle/vim-autopep8
-	url = https://github.com/tell-k/vim-autopep8
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "bundle/vim-flake8"]
-	path = bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "bundle/kotlin-vim"]
-	path = bundle/kotlin-vim
-	url = https://github.com/udalov/kotlin-vim
-[submodule "bundle/salt-vim"]
-	path = bundle/salt-vim
-	url = https://github.com/saltstack/salt-vim.git
 [submodule "bundle/vim-jsonnet"]
 	path = bundle/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet.git
+[submodule "bundle/vim-prettier"]
+	path = bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier
