@@ -1,11 +1,30 @@
 " baseline
 set langmenu=en_US.UTF-8    " sets the language of the menu (gvim)
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set number
 set encoding=utf-8
 set colorcolumn=81
+
+" install packages
+call plug#begin()
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'tpope/vim-sensible'
+Plug 'rhysd/vim-clang-format'
+Plug 'reedes/vim-pencil'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'google/vim-jsonnet'
+Plug 'prettier/vim-prettier'
+
+call plug#end()
 
 " tab fun
 set tabstop=2
@@ -49,25 +68,10 @@ endif
 " disable most mouse things
 set mouse=c
 
-" Syntastic options
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': [] }
-
 " clang-format options
 let g:clang_format#code_style = "google"
 let g:clang_format#auto_format = 0
 autocmd FileType c,cpp ClangFormatAutoEnable
-
-" autopep8 options
-let g:autopep8_on_save = 1
-let g:autopep8_disable_show_diff=1
 
 " markdown formatting
 autocmd FileType markdown,mkd call pencil#init()
@@ -77,12 +81,6 @@ autocmd FileType markdown,mkd vertical resize +1
 
 " re2c formatting
 autocmd BufRead,BufNewFile *.re setlocal filetype=cpp
-
-" perltidy automation
-autocmd BufRead,BufNewFile,BufWritePost *.pl,*.plx,*.pm :%!perltidy -q
-
-" hexmode config
-let g:hexmode_patterns = '*.DIM,*.dim,*.HDS,*.hds,*.HDF,*.hdf,*.XDF,*.xdf'
 
 " tagbar options
 let g:tagbar_ctags_bin = 'C:\cygwin64\bin\ctags.exe'
@@ -96,4 +94,3 @@ function Imwriting()
   PencilSoft
 endfunction
 cnoreabbrev imwriting call Imwriting()
-
