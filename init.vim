@@ -43,11 +43,7 @@ if has("win32")
 endif
 
 " color scheme
-if has("gui_running")
-  color dracula
-else
-  set background=dark
-endif
+set background=dark
 
 " autoopen for NERDTree
 autocmd StdinReadPre * let s:std_in=1
