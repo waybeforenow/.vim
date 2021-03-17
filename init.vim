@@ -5,6 +5,7 @@ filetype plugin indent on
 set number
 set encoding=utf-8
 set colorcolumn=81
+set fileformat=unix
 
 " install packages
 call plug#begin()
